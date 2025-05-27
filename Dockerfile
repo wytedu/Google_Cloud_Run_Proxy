@@ -1,4 +1,7 @@
-FROM nginx:alpine
-COPY nginx.conf /etc/nginx/nginx.conf
-EXPOSE 8080
-CMD ["nginx", "-g", "daemon off;"]
+FROM golang:1.21-alpine AS build
+WORKDIR /app
+COPY . .
+RUN go build -ldflags="-s -w" -o proxy
+FROM gcr.io/distroless/static
+COPY --from=build /app/proxy /
+ENTRYPOINT ["/proxy"]
