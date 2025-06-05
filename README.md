@@ -5,3 +5,9 @@
 ```
 docker.io/praveenkarunarathne/google-cloud-run-proxy
 ```
+
+## Environment Variable Name
+
+```
+V2RAY_SERVER_IP
+```
