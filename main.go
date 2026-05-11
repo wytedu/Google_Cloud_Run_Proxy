@@ -6,7 +6,7 @@ import (
 )
 func main() {
         listenAddr := ":" + os.Getenv("PORT")
-        targetAddr := os.Getenv("gcp.waiyanservice.xyz") + ":443"
+        targetAddr := os.Getenv("gcp.waiyanservice.xyz") + ":8080"
         ln, err := net.Listen("tcp", listenAddr)
         if err != nil {
                 return
