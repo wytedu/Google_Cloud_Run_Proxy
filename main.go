@@ -6,7 +6,7 @@ import (
 )
 func main() {
         listenAddr := ":" + os.Getenv("PORT")
-        targetAddr := os.Getenv("206.189.85.184") + ":8080"
+        targetAddr := os.Getenv("206.189.85.184") + ":80"
         ln, err := net.Listen("tcp", listenAddr)
         if err != nil {
                 return
